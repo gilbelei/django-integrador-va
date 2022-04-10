@@ -16,19 +16,13 @@ def make_curso():
     return {
         'id': fake.random_number(digits=2, fix_len=True),
         'title': fake.sentence(nb_words=6),
-        'description': fake.sentence(nb_words=12),
-        'preparation_time': fake.random_number(digits=2, fix_len=True),
-        'preparation_time_unit': 'Minutos',
-        'servings': fake.random_number(digits=2, fix_len=True),
-        'servings_unit': 'Porção',
-        'preparation_steps': fake.text(3000),
-        'created_at': fake.date_time(),
-        'author': {
-            'first_name': fake.first_name(),
-            'last_name': fake.last_name(),
-        },
+        'short_description': fake.sentence(nb_words=12),
+        'time_description': fake.random_number(digits=2, fix_len=True),
+        'hours_description': fake.random_number(digits=4, fix_len=True),
+        'long_description': fake.text(3000),
         'category': {
-            'name': fake.word()
+            'name': fake.text(20),
+            'type': fake.text(10),
         },
         'cover': {
             'url': 'https://loremflickr.com/%s/%s/food,cook' % rand_ratio(),
