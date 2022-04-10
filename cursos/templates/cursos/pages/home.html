@@ -1,16 +1,11 @@
-{% include 'cursos/partials/head.html' %}
+{% extends 'global/base.html' %}
 
-<body>
-    {% include 'cursos/partials/header.html' %}
-    {% include 'cursos/partials/search.html' %}
+{% block title %}Home | {% endblock title %}
 
-    <main class="main-content-container">
-        <div class="main-content main-content-list container">
+{% block content %}
+    <div class="main-content main-content-list container">
+        {% for curso in cursos %}
             {% include 'cursos/partials/curso.html' %}
-            {% include 'cursos/partials/curso.html' %}
-            {% include 'cursos/partials/curso.html' %}
-        </div>
-    </main>
-</body>
-
-</html> 
+        {% endfor %}
+    </div>
+{% endblock content %}
